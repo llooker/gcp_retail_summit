@@ -1,56 +1,57 @@
 view: response {
-  sql_table_name: `googleform_test.retail_insights_form_response` ;;
-  measure: count {
-    type: count
-  }
+  sql_table_name: `googleform_test.retail_insights` ;;
 
-  dimension: string_field_0 {
-    type: string
-    sql: ${TABLE}.string_field_0 ;;
-  }
+ measure: count {
+  type: count
+}
 
-  dimension: string_field_1 {
-    type: string
-    sql: ${TABLE}.string_field_1 ;;
-  }
+dimension: timestamp {
+  type: string
+  sql: ${TABLE}.Timestamp ;;
+}
 
-  dimension: string_field_2 {
-    type: string
-    sql: ${TABLE}.string_field_2 ;;
-  }
+dimension: what_industry_segment_do_you_represent {
+  type: string
+  sql: ${TABLE}.What_industry_segment_do_you_represent ;;
+}
 
-  dimension: string_field_3 {
-    type: string
-    sql: ${TABLE}.string_field_3 ;;
-  }
+dimension: which_position_closest_aligns_to_your_role {
+  type: string
+  sql: ${TABLE}.Which_position_closest_aligns_to_your_role ;;
+}
 
-  dimension: string_field_4 {
-    type: string
-    sql: ${TABLE}.string_field_4 ;;
-  }
+dimension: which_region_are_you_from {
+  type: string
+  sql: ${TABLE}.Which_region_are_you_from ;;
+}
 
-  dimension: string_field_5 {
-    type: string
-    sql: ${TABLE}.string_field_5 ;;
-  }
+dimension: what_is_your_company_size {
+  type: string
+  sql: ${TABLE}.What_is_your_company_size ;;
+}
 
-  dimension: string_field_6 {
-    type: string
-    sql: ${TABLE}.string_field_6 ;;
-  }
+dimension: who_do_you_primarily_sell_to {
+  type: string
+  sql: ${TABLE}.Who_do_you_primarily_sell_to ;;
+}
 
-  dimension: string_field_7 {
-    type: string
-    sql: ${TABLE}.string_field_7 ;;
-  }
+dimension: which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior {
+  type: string
+  sql: ${TABLE}.Which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior ;;
+}
 
-  dimension: string_field_8 {
-    type: string
-    sql: ${TABLE}.string_field_8 ;;
-  }
+dimension: what_do_you_believe_consumers_are_now_looking_more_for_when_purchasing {
+  type: string
+  sql: ${TABLE}.What_do_you_believe_consumers_are_now_looking_more_for_when_purchasing ;;
+}
 
-  dimension: string_field_9 {
-    type: string
-    sql: ${TABLE}.string_field_9 ;;
-  }
+dimension: which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address {
+  type: string
+  sql: ${TABLE}.Which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address ;;
+}
+
+dimension: which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world {
+  type: string
+  sql: ${TABLE}.Which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world ;;
+}
 }
