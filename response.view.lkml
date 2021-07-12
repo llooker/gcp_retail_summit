@@ -13,54 +13,70 @@ dimension: timestamp {
 dimension: what_industry_segment_do_you_represent {
   label: "Industry Segment"
   type: string
-  sql: ${TABLE}.What_industry_segment_do_you_represent ;;
+  sql: CASE WHEN ${TABLE}.What_industry_segment_do_you_represent LIKE 'What%' THEN NULL
+        ELSE ${TABLE}.What_industry_segment_do_you_represent END ;;
 }
 
 dimension: which_position_closest_aligns_to_your_role {
   label: "Position"
   type: string
-  sql: ${TABLE}.Which_position_closest_aligns_to_your_role ;;
+  sql: CASE WHEN ${TABLE}.Which_position_closest_aligns_to_your_role LIKE 'Which%' THEN NULL
+        ELSE ${TABLE}.Which_position_closest_aligns_to_your_role END;;
 }
 
 dimension: which_region_are_you_from {
   label: "Region"
   type: string
-  sql: ${TABLE}.Which_region_are_you_from ;;
+  sql: CASE WHEN ${TABLE}.Which_region_are_you_from LIKE 'Which%' THEN NULL
+        ELSE ${TABLE}.Which_region_are_you_from END;;
 }
 
 dimension: what_is_your_company_size {
   label: "Company Size"
   type: string
-  sql: ${TABLE}.What_is_your_company_size ;;
+  sql: CASE WHEN ${TABLE}.What_is_your_company_size LIKE 'What%' THEN NULL
+        ELSE ${TABLE}.What_is_your_company_size END;;
 }
 
 dimension: who_do_you_primarily_sell_to {
   label: "Buyers"
   type: string
-  sql: ${TABLE}.Who_do_you_primarily_sell_to ;;
+  sql:
+  CASE WHEN ${TABLE}.Who_do_you_primarily_sell_to LIKE 'Who%' THEN NULL
+        ELSE ${TABLE}.Who_do_you_primarily_sell_to END;;
 }
 
 dimension: which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior {
   label: "Accelerating Trends"
   type: string
-  sql: ${TABLE}.Which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior ;;
+  sql:
+
+  CASE WHEN ${TABLE}.Which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior LIKE 'Which%' THEN NULL
+        ELSE ${TABLE}.Which_of_these_five_trends_do_you_think_will_have_the_greatest_acceleration_due_to_the_impact_of_the_crisis_on_consumer_behavior END
+  ;;
 }
 
 dimension: what_do_you_believe_consumers_are_now_looking_more_for_when_purchasing {
   label: "Consumer Needs"
   type: string
-  sql: ${TABLE}.What_do_you_believe_consumers_are_now_looking_more_for_when_purchasing ;;
+  sql:
+  CASE WHEN ${TABLE}.What_do_you_believe_consumers_are_now_looking_more_for_when_purchasing LIKE 'What%' THEN NULL
+        ELSE ${TABLE}.What_do_you_believe_consumers_are_now_looking_more_for_when_purchasing END;;
 }
 
 dimension: which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address {
   label: "Retailer Critical Areas"
   type: string
-  sql: ${TABLE}.Which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address ;;
+  sql:
+  CASE WHEN ${TABLE}.Which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address LIKE 'Which%' THEN NULL
+        ELSE ${TABLE}.Which_of_these_three_critical_areas_for_our_new_normal_do_you_believe_retailers_should_be_paying_more_attention_to_and_adequately_address END;;
 }
 
 dimension: which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world {
   label: "Technology Change"
   type: string
-  sql: ${TABLE}.Which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world ;;
+  sql:
+  CASE WHEN ${TABLE}.Which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world LIKE 'Which%' THEN NULL
+        ELSE ${TABLE}.Which_technology_change_do_you_believe_will_provide_the_greatest_impact_for_companies_in_a_post_covid_world END;;
 }
 }
