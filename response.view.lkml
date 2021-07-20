@@ -35,7 +35,11 @@ dimension: what_is_your_company_size {
   label: "Company Size"
   type: string
   sql: CASE WHEN ${TABLE}.What_is_your_company_size LIKE 'What%' THEN NULL
-        ELSE ${TABLE}.What_is_your_company_size END;;
+        WHEN ${TABLE}.What_is_your_company_size LIKE '1 - 100%' THEN '(1) 1 - 100 employees'
+        WHEN ${TABLE}.What_is_your_company_size LIKE '100 - %' THEN '(2) 100 - 500 employees'
+        WHEN ${TABLE}.What_is_your_company_size LIKE '500%' THEN '(3) 500 - 2000 employees'
+        WHEN ${TABLE}.What_is_your_company_size LIKE '2000%' THEN '(4) 2000+ employees'
+        ELSE NULL END;;
 }
 
 dimension: who_do_you_primarily_sell_to {
